@@ -149,8 +149,8 @@ function PaymentFlowVisual() {
           className="absolute -top-4 left-4 bg-[#111827] border border-[#1f2937] rounded-xl px-4 py-3 shadow-lg"
         >
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-[#ff060a]/10 flex items-center justify-center">
-              <TronLogo className="w-5 h-5" />
+            <div className="w-8 h-8 rounded-full bg-[#50af95]/10 flex items-center justify-center">
+              <TetherLogo className="w-5 h-5" />
             </div>
             <div>
               <p className="text-xs text-gray-400">Network</p>
@@ -202,11 +202,13 @@ function PaymentFlowVisual() {
   );
 }
 
-function TronLogo({ className }: { className?: string }) {
+function TetherLogo({ className }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 32 32" fill="none">
-      <path d="M16 2L4 12l12 18L28 12L16 2z" fill="#ff060a" />
-      <path d="M16 2L4 12l12 6V2z" fill="#ff060a" opacity="0.7" />
+    <svg className={className} viewBox="0 0 200 200" fill="none">
+      <path d="M100 10 L185 75 L165 170 L35 170 L15 75 Z" fill="#50af95" />
+      <rect x="55" y="52" width="90" height="22" rx="2" fill="white" />
+      <rect x="85" y="72" width="30" height="62" rx="2" fill="white" />
+      <ellipse cx="100" cy="118" rx="42" ry="12" stroke="white" strokeWidth="5" fill="none" />
     </svg>
   );
 }

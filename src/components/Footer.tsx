@@ -112,8 +112,11 @@ function TelegramIcon({ className }: { className?: string }) {
 
 function TronSmall() {
   return (
-    <svg className="w-3 h-3" viewBox="0 0 32 32" fill="none">
-      <path d="M16 2L4 12l12 18L28 12L16 2z" fill="#ff060a" />
+    <svg className="w-3 h-3" viewBox="0 0 200 200" fill="none">
+      <path d="M100 10 L185 75 L165 170 L35 170 L15 75 Z" fill="#50af95" />
+      <rect x="55" y="52" width="90" height="22" rx="2" fill="white" />
+      <rect x="85" y="72" width="30" height="62" rx="2" fill="white" />
+      <ellipse cx="100" cy="118" rx="42" ry="12" stroke="white" strokeWidth="5" fill="none" />
     </svg>
   );
 }
