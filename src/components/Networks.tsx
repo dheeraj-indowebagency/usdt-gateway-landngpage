@@ -8,10 +8,10 @@ const networks = [
   {
     name: "TRC20",
     chain: "TRON Network",
-    logo: <TronLogo />,
-    color: "#ff060a",
-    bgColor: "rgba(255, 6, 10, 0.1)",
-    borderColor: "rgba(255, 6, 10, 0.2)",
+    logo: <TetherLogo />,
+    color: "#50af95",
+    bgColor: "rgba(80, 175, 149, 0.1)",
+    borderColor: "rgba(80, 175, 149, 0.2)",
     features: [
       "Near-zero transaction fees (~$0.01)",
       "3-second block confirmation",
@@ -209,11 +209,13 @@ function NetworkFlowVisual({ color, name }: { color: string; name: string }) {
   );
 }
 
-function TronLogo() {
+function TetherLogo() {
   return (
-    <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none">
-      <path d="M16 2L4 12l12 18L28 12L16 2z" fill="#ff060a" />
-      <path d="M16 2L4 12l12 6V2z" fill="#ff060a" opacity="0.7" />
+    <svg className="w-8 h-8" viewBox="0 0 200 200" fill="none">
+      <path d="M100 10 L185 75 L165 170 L35 170 L15 75 Z" fill="#50af95" />
+      <rect x="55" y="52" width="90" height="22" rx="2" fill="white" />
+      <rect x="85" y="72" width="30" height="62" rx="2" fill="white" />
+      <ellipse cx="100" cy="118" rx="42" ry="12" stroke="white" strokeWidth="5" fill="none" />
     </svg>
   );
 }

@@ -2,55 +2,46 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import {
-  Gamepad2,
-  TrendingUp,
-  Coins,
-  BarChart3,
-  Layers,
-  CreditCard,
-  Building2,
-  Globe,
-} from "lucide-react";
+import Image from "next/image";
 
 const industries = [
   {
-    icon: Gamepad2,
+    image: "/images/industries/igaming.jpg",
     title: "iGaming Platforms",
     description: "Instant deposits and withdrawals for seamless player experience.",
   },
   {
-    icon: Coins,
+    image: "/images/industries/casino.jpg",
     title: "Online Casinos",
     description: "High-volume transaction processing with zero chargebacks.",
   },
   {
-    icon: BarChart3,
+    image: "/images/industries/sports-betting.jpg",
     title: "Sports Betting",
     description: "Real-time settlement for live betting and instant payouts.",
   },
   {
-    icon: TrendingUp,
+    image: "/images/industries/forex.jpg",
     title: "Forex Brokers",
     description: "Reliable funding and withdrawal channels for global traders.",
   },
   {
-    icon: Layers,
+    image: "/images/industries/crypto-exchange.jpg",
     title: "Crypto Exchanges",
     description: "Deep liquidity integration and automated USDT transfers.",
   },
   {
-    icon: Globe,
+    image: "/images/industries/gaming-aggregator.jpg",
     title: "Gaming Aggregators",
     description: "Multi-platform payment orchestration with unified API.",
   },
   {
-    icon: CreditCard,
+    image: "/images/industries/payment-aggregator.jpg",
     title: "Payment Aggregators",
     description: "Add USDT rails to your existing payment infrastructure.",
   },
   {
-    icon: Building2,
+    image: "/images/industries/fintech.jpg",
     title: "Fintech Companies",
     description: "White-label USDT processing for your fintech product.",
   },
@@ -100,17 +91,26 @@ export default function Industries() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.4, delay: 0.08 * i }}
-              className="group bg-[#111827]/60 border border-[#1f2937] rounded-2xl p-5 sm:p-6 text-center hover:border-[#26a17b]/30 hover:bg-[#111827] transition-all duration-300 cursor-default"
+              className="group bg-[#111827]/60 border border-[#1f2937] rounded-2xl overflow-hidden hover:border-[#26a17b]/30 hover:bg-[#111827] transition-all duration-300 cursor-default"
             >
-              <div className="w-12 h-12 mx-auto rounded-xl bg-[#26a17b]/10 flex items-center justify-center mb-4 group-hover:bg-[#26a17b]/20 group-hover:scale-110 transition-all duration-300">
-                <industry.icon className="w-6 h-6 text-[#26a17b]" />
+              <div className="relative w-full h-32 sm:h-36 overflow-hidden">
+                <Image
+                  src={industry.image}
+                  alt={industry.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111827] via-[#111827]/40 to-transparent" />
               </div>
-              <h3 className="text-sm sm:text-base font-semibold text-white mb-2">
-                {industry.title}
-              </h3>
-              <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
-                {industry.description}
-              </p>
+              <div className="p-4 sm:p-5">
+                <h3 className="text-sm sm:text-base font-semibold text-white mb-2">
+                  {industry.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                  {industry.description}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
